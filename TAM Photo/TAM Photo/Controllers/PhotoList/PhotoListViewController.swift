@@ -37,6 +37,7 @@ class PhotoListViewController: UIViewController {
     
     private func setupCollectionView() {
         photosCollectionView.dataSource = self
+        photosCollectionView.delegate = self
         photosCollectionView.registerNib(PhotoCell)
         photosCollectionView.collectionViewLayout = layoutForCollectionView()
     }
@@ -62,5 +63,14 @@ extension PhotoListViewController: UICollectionViewDataSource {
         let photoCell = collectionView.dequeueReusableCell(PhotoCell.self, forIndexPath: indexPath)
         photoCell.image = UIImage(named: "photo.png")
         return photoCell
+    }
+}
+
+//MARK:- UICollectionView Delegate
+
+extension PhotoListViewController: UICollectionViewDelegate {
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        let photoViewerViewController = PhotoViewerViewController(nibName: "PhotoViewerViewController", bundle: nil)
+        presentViewController(photoViewerViewController, animated: true, completion: nil)
     }
 }
