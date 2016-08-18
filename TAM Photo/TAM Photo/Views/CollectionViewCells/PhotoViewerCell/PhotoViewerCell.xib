@@ -13,23 +13,44 @@
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="176" height="252"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sch-QJ-rtf">
+                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cIY-fu-EdY">
                         <rect key="frame" x="0.0" y="0.0" width="176" height="252"/>
-                    </imageView>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo" translatesAutoresizingMaskIntoConstraints="NO" id="sch-QJ-rtf">
+                                <rect key="frame" x="0.0" y="0.0" width="640" height="426"/>
+                                <gestureRecognizers/>
+                            </imageView>
+                        </subviews>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="sch-QJ-rtf" secondAttribute="bottom" id="fsZ-4a-bGx"/>
+                            <constraint firstAttribute="trailing" secondItem="sch-QJ-rtf" secondAttribute="trailing" id="icR-Ta-Gae"/>
+                            <constraint firstItem="sch-QJ-rtf" firstAttribute="leading" secondItem="cIY-fu-EdY" secondAttribute="leading" id="kX9-tQ-u65"/>
+                            <constraint firstItem="sch-QJ-rtf" firstAttribute="top" secondItem="cIY-fu-EdY" secondAttribute="top" id="oKw-wN-XNC"/>
+                        </constraints>
+                    </scrollView>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
             <constraints>
-                <constraint firstItem="sch-QJ-rtf" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="EvV-Ki-eSy"/>
-                <constraint firstAttribute="trailing" secondItem="sch-QJ-rtf" secondAttribute="trailing" id="UWL-JH-hvT"/>
-                <constraint firstItem="sch-QJ-rtf" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Uyk-jI-o4j"/>
-                <constraint firstAttribute="bottom" secondItem="sch-QJ-rtf" secondAttribute="bottom" id="ufO-kX-vPb"/>
+                <constraint firstAttribute="trailing" secondItem="cIY-fu-EdY" secondAttribute="trailing" id="537-yu-OyX"/>
+                <constraint firstItem="cIY-fu-EdY" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="6Gw-tB-PIh"/>
+                <constraint firstAttribute="bottom" secondItem="cIY-fu-EdY" secondAttribute="bottom" id="9GP-Gt-vwO"/>
+                <constraint firstItem="cIY-fu-EdY" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="zYo-6T-g38"/>
             </constraints>
             <size key="customSize" width="176" height="252"/>
             <connections>
+                <outlet property="imageViewBottomConstraint" destination="fsZ-4a-bGx" id="dC9-91-1Aw"/>
+                <outlet property="imageViewLeadingConstraint" destination="kX9-tQ-u65" id="Ryw-YX-jqQ"/>
+                <outlet property="imageViewTopConstraint" destination="oKw-wN-XNC" id="wRp-kK-A6s"/>
+                <outlet property="imageViewTrailingConstraint" destination="icR-Ta-Gae" id="llF-z2-Mhz"/>
                 <outlet property="photoImageView" destination="sch-QJ-rtf" id="VXy-Pz-k5R"/>
+                <outlet property="scrollView" destination="cIY-fu-EdY" id="AHq-ib-wUv"/>
             </connections>
             <point key="canvasLocation" x="201" y="227"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="photo" width="640" height="426"/>
+    </resources>
 </document>
