@@ -19,6 +19,8 @@ class PhotoListViewController: UIViewController {
     
     private let kWallPaperCategory = "b9c14c74-5741-4cd3-8dd0-dd43d27a04b5"
     
+    private var wallPapers: [WallPaper] = []
+    
     private var itemSize: CGFloat {
         let screenWidth = UIScreen.mainScreen().bounds.width
         let totalCellPading = CGFloat(numberOfItemsInRow - 1) * cellPadding
@@ -35,7 +37,14 @@ class PhotoListViewController: UIViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         WallPaperService().loadWallPappers(kWallPaperCategory, page: 1) { (result) in
-            print("completed")
+            switch result {
+            case .Success(let wallPapers):
+                let loadedWallPapers: [WallPaper] = (wallPapers as? [WallPaper]) ?? []
+                self.wallPapers.appendContentsOf(loadedWallPapers)
+                self.photosCollectionView.reloadData()
+            case .Failure(let error):
+                print(error)
+            }
         }
     }
     
@@ -67,12 +76,13 @@ class PhotoListViewController: UIViewController {
 
 extension PhotoListViewController: UICollectionViewDataSource {
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return wallPapers.count
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let photoCell = collectionView.dequeueReusableCell(PhotoCell.self, forIndexPath: indexPath)
-        photoCell.image = UIImage(named: "thumbnail.png")
+        let wallPaper = wallPapers[indexPath.row]
+        photoCell.configureCell(wallPaper)
         return photoCell
     }
 }

@@ -17,9 +17,14 @@ class WallPaperService: BaseService {
         request(.GET, path: path, parameters: parameters) { (result) in
             switch result {
             case .Success(let json):
-                print(json)
+                if let jsWallPapers = json as? JSArray {
+                    let wallPapers: [WallPaper] = Mapper<WallPaper>().mapArray(jsWallPapers) ?? []
+                    completion?(result: Result.Success(wallPapers))
+                } else {
+                    completion?(result: Result.Failure(Errors.JSON))
+                }
             case .Failure(let error):
-                print(error)
+                completion?(result: Result.Failure(error))
             }
             dispatch_async(dispatch_get_main_queue()) {
                 completion?(result: result)
