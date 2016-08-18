@@ -32,6 +32,7 @@ class PhotoListViewController: UIViewController {
     //MARK:- Private functions
     
     private func setupUI() {
+        title = Strings.PhotoList
         setupCollectionView()
     }
     
@@ -71,6 +72,6 @@ extension PhotoListViewController: UICollectionViewDataSource {
 extension PhotoListViewController: UICollectionViewDelegate {
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         let photoViewerViewController = PhotoViewerViewController(nibName: "PhotoViewerViewController", bundle: nil)
-        presentViewController(photoViewerViewController, animated: true, completion: nil)
+        navigationController?.pushViewController(photoViewerViewController, animated: true)
     }
 }

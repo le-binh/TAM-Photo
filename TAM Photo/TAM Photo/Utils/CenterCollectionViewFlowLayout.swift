@@ -45,4 +45,8 @@ class CenterCollectionViewFlowLayout: UICollectionViewFlowLayout {
             return super.targetContentOffsetForProposedContentOffset(proposedContentOffset, withScrollingVelocity: velocity)
         }
     }
+    
+    override func shouldInvalidateLayoutForBoundsChange(newBounds: CGRect) -> Bool {
+        return true
+    }
 }

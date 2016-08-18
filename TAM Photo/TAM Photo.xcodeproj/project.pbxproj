@@ -24,6 +24,7 @@
 		2DB6712A1D662A6F0052B1AE /* CenterCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB671291D662A6F0052B1AE /* CenterCollectionViewFlowLayout.swift */; };
 		2DB6712E1D662B4C0052B1AE /* PhotoViewerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB6712C1D662B4C0052B1AE /* PhotoViewerCell.swift */; };
 		2DB6712F1D662B4C0052B1AE /* PhotoViewerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DB6712D1D662B4C0052B1AE /* PhotoViewerCell.xib */; };
+		2DB671321D663BD70052B1AE /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB671311D663BD70052B1AE /* Strings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		2DB671291D662A6F0052B1AE /* CenterCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CenterCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		2DB6712C1D662B4C0052B1AE /* PhotoViewerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewerCell.swift; sourceTree = "<group>"; };
 		2DB6712D1D662B4C0052B1AE /* PhotoViewerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoViewerCell.xib; sourceTree = "<group>"; };
+		2DB671311D663BD70052B1AE /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 		2DB670D21D6607DF0052B1AE /* TAM Photo */ = {
 			isa = PBXGroup;
 			children = (
+				2DB671301D663BCE0052B1AE /* Define */,
 				2DB671281D662A170052B1AE /* Utils */,
 				2DB671171D6612E10052B1AE /* Views */,
 				2DB671141D660FC00052B1AE /* Extensions */,
@@ -257,6 +260,14 @@
 			path = PhotoViewerCell;
 			sourceTree = "<group>";
 		};
+		2DB671301D663BCE0052B1AE /* Define */ = {
+			isa = PBXGroup;
+			children = (
+				2DB671311D663BD70052B1AE /* Strings.swift */,
+			);
+			path = Define;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -393,6 +404,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2DB6711F1D6614B80052B1AE /* UICollectionView.swift in Sources */,
+				2DB671321D663BD70052B1AE /* Strings.swift in Sources */,
 				2DB6712A1D662A6F0052B1AE /* CenterCollectionViewFlowLayout.swift in Sources */,
 				2DB6711C1D6612FA0052B1AE /* PhotoCell.swift in Sources */,
 				2DB671081D6608940052B1AE /* AppDelegate.swift in Sources */,

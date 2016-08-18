@@ -15,7 +15,9 @@ class PhotoViewerViewController: UIViewController {
     @IBOutlet private weak var photoViewerCollectionView: UICollectionView!
     
     private let cellPadding: CGFloat = 10 * Ratio.horizontal
-    private let itemSize = CGSize(width: kScreenSize.width, height: kScreenSize.height)
+    private var itemSize: CGSize {
+        return CGSize(width: view.bounds.width, height: view.bounds.height)
+    }
     
     //MARK:- LifeCycle
     
@@ -28,6 +30,11 @@ class PhotoViewerViewController: UIViewController {
     
     private func setupUI() {
         setupCollectionView()
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        photoViewerCollectionView.collectionViewLayout = layoutForCollectionView()
     }
     
     private func setupCollectionView() {
