@@ -22,6 +22,8 @@
 		2DB671231D66178A0052B1AE /* PhotoViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB671211D66178A0052B1AE /* PhotoViewerViewController.swift */; };
 		2DB671241D66178A0052B1AE /* PhotoViewerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DB671221D66178A0052B1AE /* PhotoViewerViewController.xib */; };
 		2DB6712A1D662A6F0052B1AE /* CenterCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB671291D662A6F0052B1AE /* CenterCollectionViewFlowLayout.swift */; };
+		2DB6712E1D662B4C0052B1AE /* PhotoViewerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB6712C1D662B4C0052B1AE /* PhotoViewerCell.swift */; };
+		2DB6712F1D662B4C0052B1AE /* PhotoViewerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DB6712D1D662B4C0052B1AE /* PhotoViewerCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +64,8 @@
 		2DB671211D66178A0052B1AE /* PhotoViewerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewerViewController.swift; sourceTree = "<group>"; };
 		2DB671221D66178A0052B1AE /* PhotoViewerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoViewerViewController.xib; sourceTree = "<group>"; };
 		2DB671291D662A6F0052B1AE /* CenterCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CenterCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		2DB6712C1D662B4C0052B1AE /* PhotoViewerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewerCell.swift; sourceTree = "<group>"; };
+		2DB6712D1D662B4C0052B1AE /* PhotoViewerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoViewerCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +216,7 @@
 		2DB671181D6612E10052B1AE /* CollectionViewCells */ = {
 			isa = PBXGroup;
 			children = (
+				2DB6712B1D662B390052B1AE /* PhotoViewerCell */,
 				2DB671191D6612E10052B1AE /* PhotoCell */,
 			);
 			path = CollectionViewCells;
@@ -241,6 +246,15 @@
 				2DB671291D662A6F0052B1AE /* CenterCollectionViewFlowLayout.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		2DB6712B1D662B390052B1AE /* PhotoViewerCell */ = {
+			isa = PBXGroup;
+			children = (
+				2DB6712C1D662B4C0052B1AE /* PhotoViewerCell.swift */,
+				2DB6712D1D662B4C0052B1AE /* PhotoViewerCell.xib */,
+			);
+			path = PhotoViewerCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -347,6 +361,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DB6712F1D662B4C0052B1AE /* PhotoViewerCell.xib in Resources */,
 				2DB6710E1D6609610052B1AE /* Info.plist in Resources */,
 				2DB671131D6609C00052B1AE /* PhotoListViewController.xib in Resources */,
 				2DB671091D6608940052B1AE /* LaunchScreen.storyboard in Resources */,
@@ -381,6 +396,7 @@
 				2DB6712A1D662A6F0052B1AE /* CenterCollectionViewFlowLayout.swift in Sources */,
 				2DB6711C1D6612FA0052B1AE /* PhotoCell.swift in Sources */,
 				2DB671081D6608940052B1AE /* AppDelegate.swift in Sources */,
+				2DB6712E1D662B4C0052B1AE /* PhotoViewerCell.swift in Sources */,
 				2DB671121D6609C00052B1AE /* PhotoListViewController.swift in Sources */,
 				2DB671161D6610CF0052B1AE /* CGGeometry.swift in Sources */,
 				2DB671231D66178A0052B1AE /* PhotoViewerViewController.swift in Sources */,

@@ -33,7 +33,7 @@ class PhotoViewerViewController: UIViewController {
     private func setupCollectionView() {
         photoViewerCollectionView.dataSource = self
         photoViewerCollectionView.decelerationRate = UIScrollViewDecelerationRateFast
-        photoViewerCollectionView.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
+        photoViewerCollectionView.registerNib(PhotoViewerCell)
         photoViewerCollectionView.collectionViewLayout = layoutForCollectionView()
     }
     
@@ -54,8 +54,8 @@ extension PhotoViewerViewController: UICollectionViewDataSource {
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let photoViewerCell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath)
-        photoViewerCell.contentView.backgroundColor = UIColor.greenColor()
+        let photoViewerCell = collectionView.dequeueReusableCell(PhotoViewerCell.self, forIndexPath: indexPath)
+        photoViewerCell.image = UIImage(named: "photo.png")
         return photoViewerCell
     }
 }

@@ -61,7 +61,7 @@ extension PhotoListViewController: UICollectionViewDataSource {
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let photoCell = collectionView.dequeueReusableCell(PhotoCell.self, forIndexPath: indexPath)
-        photoCell.image = UIImage(named: "photo.png")
+        photoCell.image = UIImage(named: "thumbnail.png")
         return photoCell
     }
 }
