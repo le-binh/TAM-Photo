@@ -66,6 +66,7 @@
 		2DB6718E1D664A940052B1AE /* TransformOf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB6717D1D664A940052B1AE /* TransformOf.swift */; };
 		2DB6718F1D664A940052B1AE /* TransformType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB6717E1D664A940052B1AE /* TransformType.swift */; };
 		2DB671901D664A940052B1AE /* URLTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB6717F1D664A940052B1AE /* URLTransform.swift */; };
+		2DB671931D664AD80052B1AE /* WallPaper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB671921D664AD80052B1AE /* WallPaper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -152,6 +153,7 @@
 		2DB6717D1D664A940052B1AE /* TransformOf.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransformOf.swift; sourceTree = "<group>"; };
 		2DB6717E1D664A940052B1AE /* TransformType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransformType.swift; sourceTree = "<group>"; };
 		2DB6717F1D664A940052B1AE /* URLTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLTransform.swift; sourceTree = "<group>"; };
+		2DB671921D664AD80052B1AE /* WallPaper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallPaper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +204,7 @@
 		2DB670D21D6607DF0052B1AE /* TAM Photo */ = {
 			isa = PBXGroup;
 			children = (
+				2DB671911D664ABD0052B1AE /* Models */,
 				2DB671301D663BCE0052B1AE /* Define */,
 				2DB671281D662A170052B1AE /* Utils */,
 				2DB671171D6612E10052B1AE /* Views */,
@@ -459,6 +462,14 @@
 			path = Transforms;
 			sourceTree = "<group>";
 		};
+		2DB671911D664ABD0052B1AE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2DB671921D664AD80052B1AE /* WallPaper.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -615,6 +626,7 @@
 				2DB6714D1D663FD90052B1AE /* Error.swift in Sources */,
 				2DB671661D6643CE0052B1AE /* BaseService.swift in Sources */,
 				2DB6711C1D6612FA0052B1AE /* PhotoCell.swift in Sources */,
+				2DB671931D664AD80052B1AE /* WallPaper.swift in Sources */,
 				2DB6715B1D663FD90052B1AE /* Timeline.swift in Sources */,
 				2DB671891D664A940052B1AE /* DateTransform.swift in Sources */,
 				2DB6716A1D66484B0052B1AE /* Errors.swift in Sources */,
