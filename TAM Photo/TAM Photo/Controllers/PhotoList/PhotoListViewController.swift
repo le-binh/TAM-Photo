@@ -37,7 +37,7 @@ class PhotoListViewController: UIViewController {
     
     private func setupCollectionView() {
         photosCollectionView.dataSource = self
-        photosCollectionView.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
+        photosCollectionView.registerNib(PhotoCell)
         photosCollectionView.collectionViewLayout = layoutForCollectionView()
     }
     
@@ -59,8 +59,8 @@ extension PhotoListViewController: UICollectionViewDataSource {
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath)
-        cell.contentView.backgroundColor = UIColor.greenColor()
-        return cell
+        let photoCell = collectionView.dequeueReusableCell(PhotoCell.self, forIndexPath: indexPath)
+        photoCell.image = UIImage(named: "photo.png")
+        return photoCell
     }
 }
