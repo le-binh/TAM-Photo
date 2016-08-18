@@ -15,6 +15,7 @@
 		2DB6710E1D6609610052B1AE /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2DB670F51D6607DF0052B1AE /* Info.plist */; };
 		2DB671121D6609C00052B1AE /* PhotoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB671101D6609C00052B1AE /* PhotoListViewController.swift */; };
 		2DB671131D6609C00052B1AE /* PhotoListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DB671111D6609C00052B1AE /* PhotoListViewController.xib */; };
+		2DB671161D6610CF0052B1AE /* CGGeometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB671151D6610CF0052B1AE /* CGGeometry.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		2DB6710C1D6608D10052B1AE /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2DB671101D6609C00052B1AE /* PhotoListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoListViewController.swift; sourceTree = "<group>"; };
 		2DB671111D6609C00052B1AE /* PhotoListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoListViewController.xib; sourceTree = "<group>"; };
+		2DB671151D6610CF0052B1AE /* CGGeometry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGGeometry.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 		2DB670D21D6607DF0052B1AE /* TAM Photo */ = {
 			isa = PBXGroup;
 			children = (
+				2DB671141D660FC00052B1AE /* Extensions */,
 				2DB671011D66083F0052B1AE /* Controllers */,
 				2DB671021D66083F0052B1AE /* Info */,
 				2DB671031D66083F0052B1AE /* Resources */,
@@ -172,6 +175,14 @@
 				2DB671111D6609C00052B1AE /* PhotoListViewController.xib */,
 			);
 			path = PhotoList;
+			sourceTree = "<group>";
+		};
+		2DB671141D660FC00052B1AE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2DB671151D6610CF0052B1AE /* CGGeometry.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -308,6 +319,7 @@
 			files = (
 				2DB671081D6608940052B1AE /* AppDelegate.swift in Sources */,
 				2DB671121D6609C00052B1AE /* PhotoListViewController.swift in Sources */,
+				2DB671161D6610CF0052B1AE /* CGGeometry.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
