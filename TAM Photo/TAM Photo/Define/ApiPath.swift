@@ -9,5 +9,9 @@
 import Foundation
 
 struct ApiPath {
-    static let baseURL = "http://wallpaper-vnbot.azurewebsites.net/api/"
+    static let baseURL = "http://wallpaper-vnbot.azurewebsites.net/api"
+    
+    struct WallPaper {
+        static var path: String { return baseURL + "/wallpaper" }
+    }
 }

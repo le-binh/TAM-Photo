@@ -16,6 +16,9 @@ class PhotoListViewController: UIViewController {
     
     private let cellPadding: CGFloat = 2 * Ratio.horizontal
     private let numberOfItemsInRow = 4
+    
+    private let kWallPaperCategory = "b9c14c74-5741-4cd3-8dd0-dd43d27a04b5"
+    
     private var itemSize: CGFloat {
         let screenWidth = UIScreen.mainScreen().bounds.width
         let totalCellPading = CGFloat(numberOfItemsInRow - 1) * cellPadding
@@ -27,6 +30,13 @@ class PhotoListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        WallPaperService().loadWallPappers(kWallPaperCategory, page: 1) { (result) in
+            print("completed")
+        }
     }
     
     //MARK:- Private functions
