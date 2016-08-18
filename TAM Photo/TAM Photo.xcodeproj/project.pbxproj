@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D7B0ADD1D6652BC000F833C /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D7B0ADC1D6652BC000F833C /* MBProgressHUD.m */; };
 		2DB670E91D6607DF0052B1AE /* TAM_PhotoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB670E81D6607DF0052B1AE /* TAM_PhotoTests.swift */; };
 		2DB670F41D6607DF0052B1AE /* TAM_PhotoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB670F31D6607DF0052B1AE /* TAM_PhotoUITests.swift */; };
 		2DB671081D6608940052B1AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB671051D6608940052B1AE /* AppDelegate.swift */; };
@@ -67,6 +68,16 @@
 		2DB6718F1D664A940052B1AE /* TransformType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB6717E1D664A940052B1AE /* TransformType.swift */; };
 		2DB671901D664A940052B1AE /* URLTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB6717F1D664A940052B1AE /* URLTransform.swift */; };
 		2DB671931D664AD80052B1AE /* WallPaper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB671921D664AD80052B1AE /* WallPaper.swift */; };
+		2DB671A01D664FC70052B1AE /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB671961D664FC60052B1AE /* Image.swift */; };
+		2DB671A11D664FC70052B1AE /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB671971D664FC60052B1AE /* ImageCache.swift */; };
+		2DB671A21D664FC70052B1AE /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB671981D664FC60052B1AE /* ImageDownloader.swift */; };
+		2DB671A31D664FC70052B1AE /* ImageFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB671991D664FC60052B1AE /* ImageFilter.swift */; };
+		2DB671A41D664FC70052B1AE /* Info-tvOS.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2DB6719A1D664FC70052B1AE /* Info-tvOS.plist */; };
+		2DB671A51D664FC70052B1AE /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2DB6719B1D664FC70052B1AE /* Info.plist */; };
+		2DB671A61D664FC70052B1AE /* Request+AlamofireImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB6719C1D664FC70052B1AE /* Request+AlamofireImage.swift */; };
+		2DB671A71D664FC70052B1AE /* UIButton+AlamofireImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB6719D1D664FC70052B1AE /* UIButton+AlamofireImage.swift */; };
+		2DB671A81D664FC70052B1AE /* UIImage+AlamofireImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB6719E1D664FC70052B1AE /* UIImage+AlamofireImage.swift */; };
+		2DB671A91D664FC70052B1AE /* UIImageView+AlamofireImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB6719F1D664FC70052B1AE /* UIImageView+AlamofireImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +98,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2D7B0ADA1D6652BB000F833C /* TAM Photo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TAM Photo-Bridging-Header.h"; sourceTree = "<group>"; };
+		2D7B0ADB1D6652BC000F833C /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		2D7B0ADC1D6652BC000F833C /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		2DB670D01D6607DF0052B1AE /* TAM Photo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TAM Photo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DB670E41D6607DF0052B1AE /* TAM PhotoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TAM PhotoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DB670E81D6607DF0052B1AE /* TAM_PhotoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAM_PhotoTests.swift; sourceTree = "<group>"; };
@@ -154,6 +168,17 @@
 		2DB6717E1D664A940052B1AE /* TransformType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransformType.swift; sourceTree = "<group>"; };
 		2DB6717F1D664A940052B1AE /* URLTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLTransform.swift; sourceTree = "<group>"; };
 		2DB671921D664AD80052B1AE /* WallPaper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallPaper.swift; sourceTree = "<group>"; };
+		2DB671951D664FC60052B1AE /* AlamofireImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlamofireImage.h; sourceTree = "<group>"; };
+		2DB671961D664FC60052B1AE /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		2DB671971D664FC60052B1AE /* ImageCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
+		2DB671981D664FC60052B1AE /* ImageDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
+		2DB671991D664FC60052B1AE /* ImageFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageFilter.swift; sourceTree = "<group>"; };
+		2DB6719A1D664FC70052B1AE /* Info-tvOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-tvOS.plist"; sourceTree = "<group>"; };
+		2DB6719B1D664FC70052B1AE /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2DB6719C1D664FC70052B1AE /* Request+AlamofireImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Request+AlamofireImage.swift"; sourceTree = "<group>"; };
+		2DB6719D1D664FC70052B1AE /* UIButton+AlamofireImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+AlamofireImage.swift"; sourceTree = "<group>"; };
+		2DB6719E1D664FC70052B1AE /* UIImage+AlamofireImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+AlamofireImage.swift"; sourceTree = "<group>"; };
+		2DB6719F1D664FC70052B1AE /* UIImageView+AlamofireImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+AlamofireImage.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -362,6 +387,8 @@
 		2DB671351D663FCE0052B1AE /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				2DB671AA1D66503F0052B1AE /* MBProgressHUD */,
+				2DB671941D664FC60052B1AE /* AlamofireImage */,
 				2DB6716B1D664A940052B1AE /* ObjectMapper */,
 				2DB671361D663FD90052B1AE /* Alamofire */,
 			);
@@ -468,6 +495,34 @@
 				2DB671921D664AD80052B1AE /* WallPaper.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		2DB671941D664FC60052B1AE /* AlamofireImage */ = {
+			isa = PBXGroup;
+			children = (
+				2DB671951D664FC60052B1AE /* AlamofireImage.h */,
+				2DB671961D664FC60052B1AE /* Image.swift */,
+				2DB671971D664FC60052B1AE /* ImageCache.swift */,
+				2DB671981D664FC60052B1AE /* ImageDownloader.swift */,
+				2DB671991D664FC60052B1AE /* ImageFilter.swift */,
+				2DB6719A1D664FC70052B1AE /* Info-tvOS.plist */,
+				2DB6719B1D664FC70052B1AE /* Info.plist */,
+				2DB6719C1D664FC70052B1AE /* Request+AlamofireImage.swift */,
+				2DB6719D1D664FC70052B1AE /* UIButton+AlamofireImage.swift */,
+				2DB6719E1D664FC70052B1AE /* UIImage+AlamofireImage.swift */,
+				2DB6719F1D664FC70052B1AE /* UIImageView+AlamofireImage.swift */,
+			);
+			path = AlamofireImage;
+			sourceTree = "<group>";
+		};
+		2DB671AA1D66503F0052B1AE /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				2D7B0ADB1D6652BC000F833C /* MBProgressHUD.h */,
+				2D7B0ADC1D6652BC000F833C /* MBProgressHUD.m */,
+				2D7B0ADA1D6652BB000F833C /* TAM Photo-Bridging-Header.h */,
+			);
+			path = MBProgressHUD;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -580,7 +635,9 @@
 				2DB671131D6609C00052B1AE /* PhotoListViewController.xib in Resources */,
 				2DB671091D6608940052B1AE /* LaunchScreen.storyboard in Resources */,
 				2DB6710B1D6608B00052B1AE /* Assets.xcassets in Resources */,
+				2DB671A41D664FC70052B1AE /* Info-tvOS.plist in Resources */,
 				2DB6711D1D6612FA0052B1AE /* PhotoCell.xib in Resources */,
+				2DB671A51D664FC70052B1AE /* Info.plist in Resources */,
 				2DB6714E1D663FD90052B1AE /* Info-tvOS.plist in Resources */,
 				2DB671861D664A940052B1AE /* Info.plist in Resources */,
 				2DB671241D66178A0052B1AE /* PhotoViewerViewController.xib in Resources */,
@@ -609,14 +666,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				2DB671541D663FD90052B1AE /* ParameterEncoding.swift in Sources */,
+				2DB671A31D664FC70052B1AE /* ImageFilter.swift in Sources */,
 				2DB6711F1D6614B80052B1AE /* UICollectionView.swift in Sources */,
 				2DB6718D1D664A940052B1AE /* NSDecimalNumberTransform.swift in Sources */,
 				2DB671321D663BD70052B1AE /* Strings.swift in Sources */,
 				2DB671521D663FD90052B1AE /* NetworkReachabilityManager.swift in Sources */,
 				2DB6715D1D663FD90052B1AE /* Validation.swift in Sources */,
+				2D7B0ADD1D6652BC000F833C /* MBProgressHUD.m in Sources */,
 				2DB671561D663FD90052B1AE /* Response.swift in Sources */,
+				2DB671A01D664FC70052B1AE /* Image.swift in Sources */,
 				2DB671681D6643FC0052B1AE /* WallPaperService.swift in Sources */,
 				2DB671811D664A940052B1AE /* Map.swift in Sources */,
+				2DB671A21D664FC70052B1AE /* ImageDownloader.swift in Sources */,
+				2DB671A11D664FC70052B1AE /* ImageCache.swift in Sources */,
 				2DB671881D664A940052B1AE /* DateFormatterTransform.swift in Sources */,
 				2DB6718F1D664A940052B1AE /* TransformType.swift in Sources */,
 				2DB6712A1D662A6F0052B1AE /* CenterCollectionViewFlowLayout.swift in Sources */,
@@ -626,6 +688,7 @@
 				2DB6714D1D663FD90052B1AE /* Error.swift in Sources */,
 				2DB671661D6643CE0052B1AE /* BaseService.swift in Sources */,
 				2DB6711C1D6612FA0052B1AE /* PhotoCell.swift in Sources */,
+				2DB671A71D664FC70052B1AE /* UIButton+AlamofireImage.swift in Sources */,
 				2DB671931D664AD80052B1AE /* WallPaper.swift in Sources */,
 				2DB6715B1D663FD90052B1AE /* Timeline.swift in Sources */,
 				2DB671891D664A940052B1AE /* DateTransform.swift in Sources */,
@@ -638,6 +701,7 @@
 				2DB671121D6609C00052B1AE /* PhotoListViewController.swift in Sources */,
 				2DB671591D663FD90052B1AE /* ServerTrustPolicy.swift in Sources */,
 				2DB671871D664A940052B1AE /* CustomDateFormatTransform.swift in Sources */,
+				2DB671A61D664FC70052B1AE /* Request+AlamofireImage.swift in Sources */,
 				2DB671161D6610CF0052B1AE /* CGGeometry.swift in Sources */,
 				2DB671511D663FD90052B1AE /* MultipartFormData.swift in Sources */,
 				2DB671551D663FD90052B1AE /* Request.swift in Sources */,
@@ -650,7 +714,9 @@
 				2DB671531D663FD90052B1AE /* Notifications.swift in Sources */,
 				2DB6715A1D663FD90052B1AE /* Stream.swift in Sources */,
 				2DB6718A1D664A940052B1AE /* DictionaryTransform.swift in Sources */,
+				2DB671A81D664FC70052B1AE /* UIImage+AlamofireImage.swift in Sources */,
 				2DB671501D663FD90052B1AE /* Manager.swift in Sources */,
+				2DB671A91D664FC70052B1AE /* UIImageView+AlamofireImage.swift in Sources */,
 				2DB671621D6640D60052B1AE /* ApiManager.swift in Sources */,
 				2DB671231D66178A0052B1AE /* PhotoViewerViewController.swift in Sources */,
 				2DB671571D663FD90052B1AE /* ResponseSerialization.swift in Sources */,
@@ -778,10 +844,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "TAM Photo/Info/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "asiantech.vn.dev.TAM-Photo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TAM Photo/Libraries/MBProgressHUD/TAM Photo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -789,10 +858,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "TAM Photo/Info/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "asiantech.vn.dev.TAM-Photo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TAM Photo/Libraries/MBProgressHUD/TAM Photo-Bridging-Header.h";
 			};
 			name = Release;
 		};

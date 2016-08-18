@@ -15,6 +15,8 @@ class PhotoCell: UICollectionViewCell {
     @IBOutlet private weak var photoImageView: UIImageView!
     
     func configureCell(wallPaper: WallPaper) {
-        photoImageView.image = UIImage(named: "thumbnail.png")
+        photoImageView.image = nil
+        guard let url = wallPaper.thumbnailURL else { return }
+        photoImageView.af_setImageWithURL(url)
     }
 }

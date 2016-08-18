@@ -27,3 +27,13 @@ class WallPaper: Mappable {
         timestamp <- map["Timestamp"]
     }
 }
+
+extension WallPaper {
+    var imageURL: NSURL? {
+        return NSURL(string: imageURLString)
+    }
+    
+    var thumbnailURL: NSURL? {
+        return NSURL(string: thumbnailURLString)
+    }
+}

@@ -20,6 +20,7 @@ class PhotoListViewController: UIViewController {
     private let kWallPaperCategory = "b9c14c74-5741-4cd3-8dd0-dd43d27a04b5"
     
     private var wallPapers: [WallPaper] = []
+    private var isViewFirstAppear = true
     
     private var itemSize: CGFloat {
         let screenWidth = UIScreen.mainScreen().bounds.width
@@ -36,15 +37,9 @@ class PhotoListViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        WallPaperService().loadWallPappers(kWallPaperCategory, page: 1) { (result) in
-            switch result {
-            case .Success(let wallPapers):
-                let loadedWallPapers: [WallPaper] = (wallPapers as? [WallPaper]) ?? []
-                self.wallPapers.appendContentsOf(loadedWallPapers)
-                self.photosCollectionView.reloadData()
-            case .Failure(let error):
-                print(error)
-            }
+        if isViewFirstAppear {
+            isViewFirstAppear = false
+            loadWallPapers()
         }
     }
     
@@ -69,6 +64,21 @@ class PhotoListViewController: UIViewController {
         layout.minimumInteritemSpacing = 0
         layout.scrollDirection = .Vertical
         return layout
+    }
+    
+    private func loadWallPapers() {
+        MBProgressHUD.showHUDAddedTo(view, animated: true)
+        WallPaperService().loadWallPappers(kWallPaperCategory, page: 1) { (result) in
+            MBProgressHUD.hideHUDForView(self.view, animated: true)
+            switch result {
+            case .Success(let wallPapers):
+                let loadedWallPapers: [WallPaper] = (wallPapers as? [WallPaper]) ?? []
+                self.wallPapers.appendContentsOf(loadedWallPapers)
+                self.photosCollectionView.reloadData()
+            case .Failure(let error):
+                print(error)
+            }
+        }
     }
 }
 
