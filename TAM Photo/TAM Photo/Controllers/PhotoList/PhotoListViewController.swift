@@ -32,11 +32,13 @@ class PhotoListViewController: UIViewController {
     //MARK:- Private functions
     
     private func setupUI() {
+        title = Strings.PhotoList
         setupCollectionView()
     }
     
     private func setupCollectionView() {
         photosCollectionView.dataSource = self
+        photosCollectionView.delegate = self
         photosCollectionView.registerNib(PhotoCell)
         photosCollectionView.collectionViewLayout = layoutForCollectionView()
     }
@@ -60,7 +62,16 @@ extension PhotoListViewController: UICollectionViewDataSource {
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let photoCell = collectionView.dequeueReusableCell(PhotoCell.self, forIndexPath: indexPath)
-        photoCell.image = UIImage(named: "photo.png")
+        photoCell.image = UIImage(named: "thumbnail.png")
         return photoCell
+    }
+}
+
+//MARK:- UICollectionView Delegate
+
+extension PhotoListViewController: UICollectionViewDelegate {
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        let photoViewerViewController = PhotoViewerViewController(nibName: "PhotoViewerViewController", bundle: nil)
+        navigationController?.pushViewController(photoViewerViewController, animated: true)
     }
 }

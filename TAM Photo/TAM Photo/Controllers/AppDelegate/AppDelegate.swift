@@ -16,9 +16,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        window?.rootViewController = PhotoListViewController(nibName: "PhotoListViewController", bundle: nil)
+        window?.rootViewController = prepareRootViewController()
         window?.makeKeyAndVisible()
+        setupAppearence()
         return true
+    }
+    
+    private func prepareRootViewController() -> UIViewController {
+        let photoListViewController = PhotoListViewController(nibName: "PhotoListViewController", bundle: nil)
+        return UINavigationController(rootViewController: photoListViewController)
+    }
+    
+    private func setupAppearence() {
+        UINavigationBar.appearance().translucent = false
     }
 }
 

@@ -19,6 +19,12 @@
 		2DB6711C1D6612FA0052B1AE /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB6711A1D6612FA0052B1AE /* PhotoCell.swift */; };
 		2DB6711D1D6612FA0052B1AE /* PhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DB6711B1D6612FA0052B1AE /* PhotoCell.xib */; };
 		2DB6711F1D6614B80052B1AE /* UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB6711E1D6614B80052B1AE /* UICollectionView.swift */; };
+		2DB671231D66178A0052B1AE /* PhotoViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB671211D66178A0052B1AE /* PhotoViewerViewController.swift */; };
+		2DB671241D66178A0052B1AE /* PhotoViewerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DB671221D66178A0052B1AE /* PhotoViewerViewController.xib */; };
+		2DB6712A1D662A6F0052B1AE /* CenterCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB671291D662A6F0052B1AE /* CenterCollectionViewFlowLayout.swift */; };
+		2DB6712E1D662B4C0052B1AE /* PhotoViewerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB6712C1D662B4C0052B1AE /* PhotoViewerCell.swift */; };
+		2DB6712F1D662B4C0052B1AE /* PhotoViewerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DB6712D1D662B4C0052B1AE /* PhotoViewerCell.xib */; };
+		2DB671321D663BD70052B1AE /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB671311D663BD70052B1AE /* Strings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +62,12 @@
 		2DB6711A1D6612FA0052B1AE /* PhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		2DB6711B1D6612FA0052B1AE /* PhotoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoCell.xib; sourceTree = "<group>"; };
 		2DB6711E1D6614B80052B1AE /* UICollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionView.swift; sourceTree = "<group>"; };
+		2DB671211D66178A0052B1AE /* PhotoViewerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewerViewController.swift; sourceTree = "<group>"; };
+		2DB671221D66178A0052B1AE /* PhotoViewerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoViewerViewController.xib; sourceTree = "<group>"; };
+		2DB671291D662A6F0052B1AE /* CenterCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CenterCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		2DB6712C1D662B4C0052B1AE /* PhotoViewerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewerCell.swift; sourceTree = "<group>"; };
+		2DB6712D1D662B4C0052B1AE /* PhotoViewerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoViewerCell.xib; sourceTree = "<group>"; };
+		2DB671311D663BD70052B1AE /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +118,8 @@
 		2DB670D21D6607DF0052B1AE /* TAM Photo */ = {
 			isa = PBXGroup;
 			children = (
+				2DB671301D663BCE0052B1AE /* Define */,
+				2DB671281D662A170052B1AE /* Utils */,
 				2DB671171D6612E10052B1AE /* Views */,
 				2DB671141D660FC00052B1AE /* Extensions */,
 				2DB671011D66083F0052B1AE /* Controllers */,
@@ -136,6 +150,7 @@
 		2DB671011D66083F0052B1AE /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				2DB671201D66176D0052B1AE /* PhotoViewer */,
 				2DB6710F1D66099C0052B1AE /* PhotoList */,
 				2DB671041D6608940052B1AE /* AppDelegate */,
 				2DB671061D6608940052B1AE /* LaunchScreen */,
@@ -204,6 +219,7 @@
 		2DB671181D6612E10052B1AE /* CollectionViewCells */ = {
 			isa = PBXGroup;
 			children = (
+				2DB6712B1D662B390052B1AE /* PhotoViewerCell */,
 				2DB671191D6612E10052B1AE /* PhotoCell */,
 			);
 			path = CollectionViewCells;
@@ -216,6 +232,40 @@
 				2DB6711B1D6612FA0052B1AE /* PhotoCell.xib */,
 			);
 			path = PhotoCell;
+			sourceTree = "<group>";
+		};
+		2DB671201D66176D0052B1AE /* PhotoViewer */ = {
+			isa = PBXGroup;
+			children = (
+				2DB671211D66178A0052B1AE /* PhotoViewerViewController.swift */,
+				2DB671221D66178A0052B1AE /* PhotoViewerViewController.xib */,
+			);
+			path = PhotoViewer;
+			sourceTree = "<group>";
+		};
+		2DB671281D662A170052B1AE /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				2DB671291D662A6F0052B1AE /* CenterCollectionViewFlowLayout.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		2DB6712B1D662B390052B1AE /* PhotoViewerCell */ = {
+			isa = PBXGroup;
+			children = (
+				2DB6712C1D662B4C0052B1AE /* PhotoViewerCell.swift */,
+				2DB6712D1D662B4C0052B1AE /* PhotoViewerCell.xib */,
+			);
+			path = PhotoViewerCell;
+			sourceTree = "<group>";
+		};
+		2DB671301D663BCE0052B1AE /* Define */ = {
+			isa = PBXGroup;
+			children = (
+				2DB671311D663BD70052B1AE /* Strings.swift */,
+			);
+			path = Define;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -322,11 +372,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DB6712F1D662B4C0052B1AE /* PhotoViewerCell.xib in Resources */,
 				2DB6710E1D6609610052B1AE /* Info.plist in Resources */,
 				2DB671131D6609C00052B1AE /* PhotoListViewController.xib in Resources */,
 				2DB671091D6608940052B1AE /* LaunchScreen.storyboard in Resources */,
 				2DB6710B1D6608B00052B1AE /* Assets.xcassets in Resources */,
 				2DB6711D1D6612FA0052B1AE /* PhotoCell.xib in Resources */,
+				2DB671241D66178A0052B1AE /* PhotoViewerViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,10 +404,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				2DB6711F1D6614B80052B1AE /* UICollectionView.swift in Sources */,
+				2DB671321D663BD70052B1AE /* Strings.swift in Sources */,
+				2DB6712A1D662A6F0052B1AE /* CenterCollectionViewFlowLayout.swift in Sources */,
 				2DB6711C1D6612FA0052B1AE /* PhotoCell.swift in Sources */,
 				2DB671081D6608940052B1AE /* AppDelegate.swift in Sources */,
+				2DB6712E1D662B4C0052B1AE /* PhotoViewerCell.swift in Sources */,
 				2DB671121D6609C00052B1AE /* PhotoListViewController.swift in Sources */,
 				2DB671161D6610CF0052B1AE /* CGGeometry.swift in Sources */,
+				2DB671231D66178A0052B1AE /* PhotoViewerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -561,6 +617,7 @@
 				2DB670FA1D6607DF0052B1AE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2DB670FB1D6607DF0052B1AE /* Build configuration list for PBXNativeTarget "TAM PhotoTests" */ = {
 			isa = XCConfigurationList;
@@ -569,6 +626,7 @@
 				2DB670FD1D6607DF0052B1AE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2DB670FE1D6607DF0052B1AE /* Build configuration list for PBXNativeTarget "TAM PhotoUITests" */ = {
 			isa = XCConfigurationList;
@@ -577,6 +635,7 @@
 				2DB671001D6607DF0052B1AE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
