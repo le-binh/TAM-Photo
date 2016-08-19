@@ -15,20 +15,19 @@ class WallPaperService: BaseService {
         parameters["category"] = category
         parameters["page"] = page
         request(.GET, path: path, parameters: parameters) { (result) in
+            var completionResult: Result<AnyObject, NSError>!
             switch result {
             case .Success(let json):
                 if let jsWallPapers = json as? JSArray {
                     let wallPapers: [WallPaper] = Mapper<WallPaper>().mapArray(jsWallPapers) ?? []
-                    completion?(result: Result.Success(wallPapers))
+                    completionResult = Result.Success(wallPapers)
                 } else {
-                    completion?(result: Result.Failure(Errors.JSON))
+                    completionResult = Result.Failure(Errors.JSON)
                 }
             case .Failure(let error):
-                completion?(result: Result.Failure(error))
+                completionResult = Result.Failure(error)
             }
-            dispatch_async(dispatch_get_main_queue()) {
-                completion?(result: result)
-            }
+            completion?(result: completionResult)
         }
     }
 }

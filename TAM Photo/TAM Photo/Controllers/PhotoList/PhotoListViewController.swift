@@ -22,7 +22,7 @@ class PhotoListViewController: BaseViewController {
     private var wallPapers: [WallPaper] = []
     private var isViewFirstAppear = true
     var currentLoadingPage: Int = 1
-    var shouldLoadingMoreWallPapers = true
+    var shouldLoadingMoreWallPapers = false
     var loadingMoreManager: LoadingMoreManger!
     
     private var itemSize: CGFloat {
@@ -83,7 +83,7 @@ class PhotoListViewController: BaseViewController {
             switch result {
             case .Success(let wallPapers):
                 let loadedWallPapers: [WallPaper] = (wallPapers as? [WallPaper]) ?? []
-                self.shouldLoadingMoreWallPapers = loadedWallPapers.isEmpty
+                self.shouldLoadingMoreWallPapers = !loadedWallPapers.isEmpty
                 self.wallPapers.appendContentsOf(loadedWallPapers)
                 self.photosCollectionView.reloadData()
             case .Failure(let error):
