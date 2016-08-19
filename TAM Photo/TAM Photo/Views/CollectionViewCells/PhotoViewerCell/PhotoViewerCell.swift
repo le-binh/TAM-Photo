@@ -101,13 +101,8 @@ class PhotoViewerCell: UICollectionViewCell {
     }
     
     private func updateZoomScale(animated: Bool) {
-        if animated {
-            UIView.animateWithDuration(kZoomScaleUpdatingAnimationDuration, animations: {
-                self.scrollView.zoomScale = self.inZoom ? 1 : self.minimumZoomScale
-            })
-        } else {
-            scrollView.zoomScale = inZoom ? 1 : minimumZoomScale
-        }
+        let scale = self.inZoom ? 1 : self.minimumZoomScale
+        self.scrollView.setZoomScale(scale, animated: animated)
     }
 }
 
