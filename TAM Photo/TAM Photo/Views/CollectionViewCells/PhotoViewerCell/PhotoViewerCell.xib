@@ -20,13 +20,18 @@
                                 <rect key="frame" x="0.0" y="0.0" width="640" height="426"/>
                                 <gestureRecognizers/>
                             </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="wAm-CJ-xXi">
+                                <rect key="frame" x="78" y="116" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="wAm-CJ-xXi" firstAttribute="centerX" secondItem="cIY-fu-EdY" secondAttribute="centerX" id="63L-85-cqF"/>
                             <constraint firstAttribute="bottom" secondItem="sch-QJ-rtf" secondAttribute="bottom" id="fsZ-4a-bGx"/>
                             <constraint firstAttribute="trailing" secondItem="sch-QJ-rtf" secondAttribute="trailing" id="icR-Ta-Gae"/>
                             <constraint firstItem="sch-QJ-rtf" firstAttribute="leading" secondItem="cIY-fu-EdY" secondAttribute="leading" id="kX9-tQ-u65"/>
                             <constraint firstItem="sch-QJ-rtf" firstAttribute="top" secondItem="cIY-fu-EdY" secondAttribute="top" id="oKw-wN-XNC"/>
+                            <constraint firstItem="wAm-CJ-xXi" firstAttribute="centerY" secondItem="cIY-fu-EdY" secondAttribute="centerY" id="omK-Pj-zUF"/>
                         </constraints>
                     </scrollView>
                 </subviews>
@@ -40,6 +45,7 @@
             </constraints>
             <size key="customSize" width="176" height="252"/>
             <connections>
+                <outlet property="activityIndicatorView" destination="wAm-CJ-xXi" id="IPF-5a-OO6"/>
                 <outlet property="imageViewBottomConstraint" destination="fsZ-4a-bGx" id="dC9-91-1Aw"/>
                 <outlet property="imageViewLeadingConstraint" destination="kX9-tQ-u65" id="Ryw-YX-jqQ"/>
                 <outlet property="imageViewTopConstraint" destination="oKw-wN-XNC" id="wRp-kK-A6s"/>

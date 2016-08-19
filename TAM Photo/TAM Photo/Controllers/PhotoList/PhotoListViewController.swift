@@ -16,6 +16,12 @@ class PhotoListViewController: UIViewController {
     
     private let cellPadding: CGFloat = 2 * Ratio.horizontal
     private let numberOfItemsInRow = 4
+    
+    private let kWallPaperCategory = "b9c14c74-5741-4cd3-8dd0-dd43d27a04b5"
+    
+    private var wallPapers: [WallPaper] = []
+    private var isViewFirstAppear = true
+    
     private var itemSize: CGFloat {
         let screenWidth = UIScreen.mainScreen().bounds.width
         let totalCellPading = CGFloat(numberOfItemsInRow - 1) * cellPadding
@@ -27,6 +33,14 @@ class PhotoListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        if isViewFirstAppear {
+            isViewFirstAppear = false
+            loadWallPapers()
+        }
     }
     
     //MARK:- Private functions
@@ -51,18 +65,34 @@ class PhotoListViewController: UIViewController {
         layout.scrollDirection = .Vertical
         return layout
     }
+    
+    private func loadWallPapers() {
+        MBProgressHUD.showHUDAddedTo(view, animated: true)
+        WallPaperService().loadWallPappers(kWallPaperCategory, page: 1) { (result) in
+            MBProgressHUD.hideHUDForView(self.view, animated: true)
+            switch result {
+            case .Success(let wallPapers):
+                let loadedWallPapers: [WallPaper] = (wallPapers as? [WallPaper]) ?? []
+                self.wallPapers.appendContentsOf(loadedWallPapers)
+                self.photosCollectionView.reloadData()
+            case .Failure(let error):
+                print(error)
+            }
+        }
+    }
 }
 
 //MARK:- UICollectionView Data Source
 
 extension PhotoListViewController: UICollectionViewDataSource {
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return wallPapers.count
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let photoCell = collectionView.dequeueReusableCell(PhotoCell.self, forIndexPath: indexPath)
-        photoCell.image = UIImage(named: "thumbnail.png")
+        let wallPaper = wallPapers[indexPath.row]
+        photoCell.configureCell(wallPaper)
         return photoCell
     }
 }
@@ -72,6 +102,8 @@ extension PhotoListViewController: UICollectionViewDataSource {
 extension PhotoListViewController: UICollectionViewDelegate {
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         let photoViewerViewController = PhotoViewerViewController(nibName: "PhotoViewerViewController", bundle: nil)
+        photoViewerViewController.wallPapers = self.wallPapers
+        photoViewerViewController.selectedWallPaper = self.wallPapers[indexPath.row]
         navigationController?.pushViewController(photoViewerViewController, animated: true)
     }
 }
