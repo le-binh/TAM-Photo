@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PhotoListViewController: UIViewController {
+class PhotoListViewController: BaseViewController {
     
     //MARK:- Properties
     
@@ -64,13 +64,14 @@ class PhotoListViewController: UIViewController {
         photosCollectionView.delegate = self
         photosCollectionView.registerNib(PhotoCell)
         photosCollectionView.collectionViewLayout = layoutForCollectionView()
+        photosCollectionView.backgroundColor = Colors.Blue91
     }
     
     private func layoutForCollectionView() -> UICollectionViewLayout {
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: itemSize, height: itemSize)
         layout.minimumLineSpacing = cellPadding
-        layout.minimumInteritemSpacing = 0
+        layout.minimumInteritemSpacing = cellPadding
         layout.scrollDirection = .Vertical
         return layout
     }

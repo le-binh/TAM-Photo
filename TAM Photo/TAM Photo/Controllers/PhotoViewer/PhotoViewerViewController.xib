@@ -26,15 +26,27 @@
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ybp-v9-zzz">
+                    <rect key="frame" x="8" y="8" width="30" height="30"/>
+                    <state key="normal" image="close"/>
+                    <connections>
+                        <action selector="closeButtonClicked:" destination="-1" eventType="touchUpInside" id="Vss-Uu-fFF"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="68b-G8-qJ6" secondAttribute="bottom" id="8xN-yb-vWc"/>
                 <constraint firstItem="68b-G8-qJ6" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="AG5-xx-E2Z"/>
+                <constraint firstItem="ybp-v9-zzz" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="8" id="YEt-89-XD9"/>
                 <constraint firstItem="68b-G8-qJ6" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="b4t-x0-25Y"/>
                 <constraint firstAttribute="trailing" secondItem="68b-G8-qJ6" secondAttribute="trailing" id="kul-rd-wfL"/>
+                <constraint firstItem="ybp-v9-zzz" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="qEI-oe-Zeq"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
         </view>
     </objects>
+    <resources>
+        <image name="close" width="30" height="30"/>
+    </resources>
 </document>

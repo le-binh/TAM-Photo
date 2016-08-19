@@ -81,6 +81,9 @@
 		2DB671A91D664FC70052B1AE /* UIImageView+AlamofireImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB6719F1D664FC70052B1AE /* UIImageView+AlamofireImage.swift */; };
 		2DEC6A291D66A6150047926A /* LoadingMoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DEC6A281D66A6150047926A /* LoadingMoreManager.swift */; };
 		2DEC6A2B1D66A62B0047926A /* UIScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DEC6A2A1D66A62B0047926A /* UIScrollView.swift */; };
+		2DEC6A2D1D66B2AC0047926A /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DEC6A2C1D66B2AC0047926A /* Colors.swift */; };
+		2DEC6A2F1D66B30B0047926A /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DEC6A2E1D66B30B0047926A /* UIColor.swift */; };
+		2DEC6A321D66BBA10047926A /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DEC6A311D66BBA10047926A /* BaseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -185,6 +188,9 @@
 		2DB6719F1D664FC70052B1AE /* UIImageView+AlamofireImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+AlamofireImage.swift"; sourceTree = "<group>"; };
 		2DEC6A281D66A6150047926A /* LoadingMoreManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingMoreManager.swift; sourceTree = "<group>"; };
 		2DEC6A2A1D66A62B0047926A /* UIScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIScrollView.swift; sourceTree = "<group>"; };
+		2DEC6A2C1D66B2AC0047926A /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		2DEC6A2E1D66B30B0047926A /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		2DEC6A311D66BBA10047926A /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -270,6 +276,7 @@
 		2DB671011D66083F0052B1AE /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				2DEC6A301D66BB8E0047926A /* Base */,
 				2DB671201D66176D0052B1AE /* PhotoViewer */,
 				2DB6710F1D66099C0052B1AE /* PhotoList */,
 				2DB671041D6608940052B1AE /* AppDelegate */,
@@ -326,6 +333,7 @@
 				2DB6711E1D6614B80052B1AE /* UICollectionView.swift */,
 				2D7B0ADE1D665663000F833C /* Array.swift */,
 				2DEC6A2A1D66A62B0047926A /* UIScrollView.swift */,
+				2DEC6A2E1D66B30B0047926A /* UIColor.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -389,6 +397,7 @@
 				2DB671311D663BD70052B1AE /* Strings.swift */,
 				2DB671331D663E3A0052B1AE /* ApiPath.swift */,
 				2DB671691D66484B0052B1AE /* Errors.swift */,
+				2DEC6A2C1D66B2AC0047926A /* Colors.swift */,
 			);
 			path = Define;
 			sourceTree = "<group>";
@@ -532,6 +541,14 @@
 				2D7B0ADA1D6652BB000F833C /* TAM Photo-Bridging-Header.h */,
 			);
 			path = MBProgressHUD;
+			sourceTree = "<group>";
+		};
+		2DEC6A301D66BB8E0047926A /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				2DEC6A311D66BBA10047926A /* BaseViewController.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -679,6 +696,7 @@
 				2DB6711F1D6614B80052B1AE /* UICollectionView.swift in Sources */,
 				2DB6718D1D664A940052B1AE /* NSDecimalNumberTransform.swift in Sources */,
 				2DB671321D663BD70052B1AE /* Strings.swift in Sources */,
+				2DEC6A321D66BBA10047926A /* BaseViewController.swift in Sources */,
 				2DB671521D663FD90052B1AE /* NetworkReachabilityManager.swift in Sources */,
 				2DB6715D1D663FD90052B1AE /* Validation.swift in Sources */,
 				2D7B0ADD1D6652BC000F833C /* MBProgressHUD.m in Sources */,
@@ -695,6 +713,7 @@
 				2DB6718E1D664A940052B1AE /* TransformOf.swift in Sources */,
 				2DB6715C1D663FD90052B1AE /* Upload.swift in Sources */,
 				2DB6714D1D663FD90052B1AE /* Error.swift in Sources */,
+				2DEC6A2F1D66B30B0047926A /* UIColor.swift in Sources */,
 				2DB671661D6643CE0052B1AE /* BaseService.swift in Sources */,
 				2DB6711C1D6612FA0052B1AE /* PhotoCell.swift in Sources */,
 				2DB671A71D664FC70052B1AE /* UIButton+AlamofireImage.swift in Sources */,
@@ -716,6 +735,7 @@
 				2DB671511D663FD90052B1AE /* MultipartFormData.swift in Sources */,
 				2DB671551D663FD90052B1AE /* Request.swift in Sources */,
 				2DB6714B1D663FD90052B1AE /* Alamofire.swift in Sources */,
+				2DEC6A2D1D66B2AC0047926A /* Colors.swift in Sources */,
 				2DB671801D664A940052B1AE /* FromJSON.swift in Sources */,
 				2DB671851D664A940052B1AE /* ToJSON.swift in Sources */,
 				2DB671821D664A940052B1AE /* Mappable.swift in Sources */,
