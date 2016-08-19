@@ -14,18 +14,13 @@ class PhotoViewerCell: UICollectionViewCell {
     
     @IBOutlet private weak var photoImageView: UIImageView!
     @IBOutlet private weak var scrollView: UIScrollView!
+    @IBOutlet private weak var activityIndicatorView: UIActivityIndicatorView!
     @IBOutlet private weak var imageViewBottomConstraint: NSLayoutConstraint!
     @IBOutlet private weak var imageViewLeadingConstraint: NSLayoutConstraint!
     @IBOutlet private weak var imageViewTopConstraint: NSLayoutConstraint!
     @IBOutlet private weak var imageViewTrailingConstraint: NSLayoutConstraint!
     
     private let kZoomScaleUpdatingAnimationDuration = 0.3
-    
-    var image: UIImage? {
-        didSet {
-            photoImageView.image = image
-        }
-    }
     
     var minimumZoomScale: CGFloat {
         return minimumZoomScaleForSize(bounds.size)
@@ -42,6 +37,7 @@ class PhotoViewerCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         scrollView.delegate = self
+        activityIndicatorView.hidesWhenStopped = true
         addTapGestureForPhotoImageView()
     }
     
@@ -56,6 +52,21 @@ class PhotoViewerCell: UICollectionViewCell {
         inZoom = !inZoom
     }
     
+    //MARK:- Public functions
+    
+    func configureCell(wallPaper: WallPaper) {
+        activityIndicatorView.startAnimating()
+        photoImageView.image = nil
+        guard let url = wallPaper.imageURL else { return }
+        photoImageView.af_setImageWithURL(url, imageTransition: UIImageView.ImageTransition.None, runImageTransitionIfCached: false) { (response) in
+            if let image = response.result.value {
+                self.activityIndicatorView.stopAnimating()
+                self.photoImageView.image = image
+                self.layoutIfNeeded()
+                self.layoutSubviews()
+            }
+        }
+    }
     
     //MARK:- Private functions
     
@@ -109,5 +120,13 @@ extension PhotoViewerCell: UIScrollViewDelegate {
     
     func scrollViewDidZoom(scrollView: UIScrollView) {
         centerPhotoImageViewInSize(bounds.size)
+    }
+    
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        let contentOffsetX = scrollView.contentOffset.x
+        let contentSizeWidth = scrollView.contentSize.width
+        let scrollWidth = scrollView.bounds.width
+        let scrolledToHorizontalEdge = contentOffsetX == 0 || contentOffsetX == (contentSizeWidth - scrollWidth)
+        scrollView.scrollEnabled = !scrolledToHorizontalEdge
     }
 }

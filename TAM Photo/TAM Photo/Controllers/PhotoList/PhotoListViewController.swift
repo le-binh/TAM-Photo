@@ -102,6 +102,8 @@ extension PhotoListViewController: UICollectionViewDataSource {
 extension PhotoListViewController: UICollectionViewDelegate {
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         let photoViewerViewController = PhotoViewerViewController(nibName: "PhotoViewerViewController", bundle: nil)
+        photoViewerViewController.wallPapers = self.wallPapers
+        photoViewerViewController.selectedWallPaper = self.wallPapers[indexPath.row]
         navigationController?.pushViewController(photoViewerViewController, animated: true)
     }
 }

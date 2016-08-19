@@ -12,7 +12,7 @@ class WallPaper: Mappable {
     var title = ""
     var imageURLString = ""
     var thumbnailURLString = ""
-    var id: Double = 0
+    var id = ""
     var timestamp = ""
     
     required init?(_ map: Map) {
@@ -36,4 +36,12 @@ extension WallPaper {
     var thumbnailURL: NSURL? {
         return NSURL(string: thumbnailURLString)
     }
+}
+
+extension WallPaper: Equatable {
+    
+}
+
+func == (lhs: WallPaper, rhs: WallPaper) -> Bool {
+    return lhs.id == rhs.id
 }

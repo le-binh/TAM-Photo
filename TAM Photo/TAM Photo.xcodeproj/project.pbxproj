@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2D7B0ADD1D6652BC000F833C /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D7B0ADC1D6652BC000F833C /* MBProgressHUD.m */; };
+		2D7B0ADF1D665663000F833C /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7B0ADE1D665663000F833C /* Array.swift */; };
 		2DB670E91D6607DF0052B1AE /* TAM_PhotoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB670E81D6607DF0052B1AE /* TAM_PhotoTests.swift */; };
 		2DB670F41D6607DF0052B1AE /* TAM_PhotoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB670F31D6607DF0052B1AE /* TAM_PhotoUITests.swift */; };
 		2DB671081D6608940052B1AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB671051D6608940052B1AE /* AppDelegate.swift */; };
@@ -101,6 +102,7 @@
 		2D7B0ADA1D6652BB000F833C /* TAM Photo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TAM Photo-Bridging-Header.h"; sourceTree = "<group>"; };
 		2D7B0ADB1D6652BC000F833C /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		2D7B0ADC1D6652BC000F833C /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		2D7B0ADE1D665663000F833C /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		2DB670D01D6607DF0052B1AE /* TAM Photo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TAM Photo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DB670E41D6607DF0052B1AE /* TAM PhotoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TAM PhotoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DB670E81D6607DF0052B1AE /* TAM_PhotoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAM_PhotoTests.swift; sourceTree = "<group>"; };
@@ -318,6 +320,7 @@
 			children = (
 				2DB671151D6610CF0052B1AE /* CGGeometry.swift */,
 				2DB6711E1D6614B80052B1AE /* UICollectionView.swift */,
+				2D7B0ADE1D665663000F833C /* Array.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -692,6 +695,7 @@
 				2DB671931D664AD80052B1AE /* WallPaper.swift in Sources */,
 				2DB6715B1D663FD90052B1AE /* Timeline.swift in Sources */,
 				2DB671891D664A940052B1AE /* DateTransform.swift in Sources */,
+				2D7B0ADF1D665663000F833C /* Array.swift in Sources */,
 				2DB6716A1D66484B0052B1AE /* Errors.swift in Sources */,
 				2DB671081D6608940052B1AE /* AppDelegate.swift in Sources */,
 				2DB671841D664A940052B1AE /* Operators.swift in Sources */,

@@ -15,6 +15,10 @@ class PhotoViewerViewController: UIViewController {
     @IBOutlet private weak var photoViewerCollectionView: UICollectionView!
     
     private let cellPadding: CGFloat = 10 * Ratio.horizontal
+    
+    var wallPapers: [WallPaper] = []
+    var selectedWallPaper: WallPaper?
+    
     private var itemSize: CGSize {
         return CGSize(width: view.bounds.width, height: view.bounds.height)
     }
@@ -26,15 +30,20 @@ class PhotoViewerViewController: UIViewController {
         setupUI()
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+    }
+    
     //MARK:- Private functions
     
     private func setupUI() {
         setupCollectionView()
     }
     
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
         photoViewerCollectionView.collectionViewLayout = layoutForCollectionView()
+        moveToSelectedWallPaperIfNeeded()
     }
     
     private func setupCollectionView() {
@@ -51,18 +60,25 @@ class PhotoViewerViewController: UIViewController {
         layout.scrollDirection = .Horizontal
         return layout
     }
+    
+    private func moveToSelectedWallPaperIfNeeded() {
+        guard let wallPaper = selectedWallPaper else { return }
+        guard let index = wallPapers.indexOf(wallPaper) else { return }
+        let indexPath = NSIndexPath(forItem: index, inSection: 0)
+        photoViewerCollectionView.scrollToItemAtIndexPath(indexPath, atScrollPosition: .Left, animated: false)
+    }
 }
 
 //MARK:- UICollectionView Data Source
 
 extension PhotoViewerViewController: UICollectionViewDataSource {
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return wallPapers.count
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let photoViewerCell = collectionView.dequeueReusableCell(PhotoViewerCell.self, forIndexPath: indexPath)
-        photoViewerCell.image = UIImage(named: "photo.png")
+        photoViewerCell.configureCell(wallPapers[indexPath.row])
         return photoViewerCell
     }
 }

@@ -12,9 +12,11 @@ typealias JSObject = [String : AnyObject]
 typealias JSArray = [JSObject]
 typealias Completion = (result: Result <AnyObject, NSError>) -> Void
 
-let apiManager = ApiManager()
+let apiManager = ApiManager.sharedInstance
 
 class ApiManager {
+    static let sharedInstance = ApiManager()
+    private init() {}
     
     func request(method: Method, path: URLStringConvertible, parameters: JSObject? = nil, completion: Completion) -> Request {
         let parameters = parameters ?? JSObject()
