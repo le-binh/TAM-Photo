@@ -1,5 +1,4 @@
-# TAM-Photo - A photo viewer app which used arbitrary photo sharing
- service.
+# TAM-Photo - A photo viewer app which used arbitrary photo sharing service.
  
 # Environment
 - Xcode 7.3
