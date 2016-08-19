@@ -58,6 +58,7 @@ class PhotoViewerViewController: BaseViewController {
     
     private func setupCollectionView() {
         photoViewerCollectionView.dataSource = self
+        photoViewerCollectionView.delegate = self
         photoViewerCollectionView.decelerationRate = UIScrollViewDecelerationRateFast
         photoViewerCollectionView.registerNib(PhotoViewerCell)
         photoViewerCollectionView.collectionViewLayout = layoutForCollectionView()
@@ -91,5 +92,15 @@ extension PhotoViewerViewController: UICollectionViewDataSource {
         let photoViewerCell = collectionView.dequeueReusableCell(PhotoViewerCell.self, forIndexPath: indexPath)
         photoViewerCell.configureCell(wallPapers[indexPath.row])
         return photoViewerCell
+    }
+}
+
+//MARK:- UICollectionView Delegate
+
+extension PhotoViewerViewController: UICollectionViewDelegate {
+    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+        let visibleIndexPaths = photoViewerCollectionView.indexPathsForVisibleItems()
+        guard let indexPath = visibleIndexPaths.first else { return }
+        selectedWallPaper = wallPapers[indexPath.row]
     }
 }
