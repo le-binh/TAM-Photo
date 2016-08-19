@@ -24,4 +24,15 @@ extension UIScrollView {
         let scrolledToHorizontalEdge = contentOffsetX == 0 || contentOffsetX == (contentSizeWidth - scrollWidth)
         return scrolledToHorizontalEdge
     }
+    
+    func zoomRectWithScale(scale: CGFloat, withCenter center: CGPoint) -> CGRect {
+        var zoomRect = CGRect()
+        zoomRect.size.width = frame.size.width * scale
+        zoomRect.size.height = frame.size.height * scale
+        
+        zoomRect.origin.x = center.x - (zoomRect.size.width / 2.0)
+        zoomRect.origin.y = center.y - (zoomRect.size.height / 2.0)
+        
+        return zoomRect
+    }
 }

@@ -20,23 +20,19 @@ class PhotoViewerCell: UICollectionViewCell {
     @IBOutlet private weak var imageViewTopConstraint: NSLayoutConstraint!
     @IBOutlet private weak var imageViewTrailingConstraint: NSLayoutConstraint!
     
-    private let kZoomScaleUpdatingAnimationDuration = 0.3
-    
+    private let maximumZoomScale: CGFloat = 1
     var minimumZoomScale: CGFloat {
         return minimumZoomScaleForSize(bounds.size)
     }
     
-    var inZoom: Bool = false {
-        didSet {
-            updateZoomScale(true)
-        }
-    }
+    var inZoom: Bool = false
     
     //MARK:- LifeCycle
     
     override func awakeFromNib() {
         super.awakeFromNib()
         scrollView.delegate = self
+        scrollView.maximumZoomScale = maximumZoomScale
         activityIndicatorView.hidesWhenStopped = true
         addTapGestureForPhotoImageView()
     }
@@ -49,7 +45,16 @@ class PhotoViewerCell: UICollectionViewCell {
     //MARK:- Gesture Handler
     
     func tapGestureHandler(sender: AnyObject) {
+        guard let tapGesture = sender as? UITapGestureRecognizer else { return }
         inZoom = !inZoom
+        
+        if inZoom {
+            let point = tapGesture.locationInView(photoImageView)
+            let zoomRect = scrollView.zoomRectWithScale(maximumZoomScale, withCenter: point)
+            scrollView.zoomToRect(zoomRect, animated: true)
+        } else {
+            scrollView.setZoomScale(minimumZoomScale, animated: true)
+        }
     }
     
     //MARK:- Public functions
@@ -84,11 +89,9 @@ class PhotoViewerCell: UICollectionViewCell {
     private func centerPhotoImageViewInSize(size: CGSize) {
         let yOffset = max(0, (size.height - photoImageView.frame.height) / 2)
         imageViewTopConstraint.constant = yOffset
-        imageViewBottomConstraint.constant = yOffset
         
         let xOffset = max(0, (size.width - photoImageView.frame.width) / 2)
         imageViewLeadingConstraint.constant = xOffset
-        imageViewTrailingConstraint.constant = xOffset
         
         layoutIfNeeded()
     }
@@ -98,11 +101,6 @@ class PhotoViewerCell: UICollectionViewCell {
         tapGesture.numberOfTapsRequired = 2
         photoImageView.userInteractionEnabled = true
         photoImageView.addGestureRecognizer(tapGesture)
-    }
-    
-    private func updateZoomScale(animated: Bool) {
-        let scale = self.inZoom ? 1 : self.minimumZoomScale
-        self.scrollView.setZoomScale(scale, animated: animated)
     }
 }
 
@@ -115,10 +113,5 @@ extension PhotoViewerCell: UIScrollViewDelegate {
     
     func scrollViewDidZoom(scrollView: UIScrollView) {
         centerPhotoImageViewInSize(bounds.size)
-    }
-    
-    func scrollViewDidScroll(scrollView: UIScrollView) {
-        let scrolledToHorizontalEdges = scrollView.scrolledToHorizontalEdges
-        scrollView.scrollEnabled = !scrolledToHorizontalEdges
     }
 }
