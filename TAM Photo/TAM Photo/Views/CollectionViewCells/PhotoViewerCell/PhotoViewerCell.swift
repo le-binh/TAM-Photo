@@ -58,7 +58,7 @@ class PhotoViewerCell: UICollectionViewCell {
         activityIndicatorView.startAnimating()
         photoImageView.image = nil
         guard let url = wallPaper.imageURL else { return }
-        photoImageView.af_setImageWithURL(url, imageTransition: UIImageView.ImageTransition.None, runImageTransitionIfCached: false) { (response) in
+        photoImageView.af_setImageWithURL(url) { (response) in
             if let image = response.result.value {
                 self.activityIndicatorView.stopAnimating()
                 self.photoImageView.image = image
@@ -123,10 +123,7 @@ extension PhotoViewerCell: UIScrollViewDelegate {
     }
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
-        let contentOffsetX = scrollView.contentOffset.x
-        let contentSizeWidth = scrollView.contentSize.width
-        let scrollWidth = scrollView.bounds.width
-        let scrolledToHorizontalEdge = contentOffsetX == 0 || contentOffsetX == (contentSizeWidth - scrollWidth)
-        scrollView.scrollEnabled = !scrolledToHorizontalEdge
+        let scrolledToHorizontalEdges = scrollView.scrolledToHorizontalEdges
+        scrollView.scrollEnabled = !scrolledToHorizontalEdges
     }
 }

@@ -21,6 +21,9 @@ class PhotoListViewController: UIViewController {
     
     private var wallPapers: [WallPaper] = []
     private var isViewFirstAppear = true
+    var currentLoadingPage: Int = 1
+    var shouldLoadingMoreWallPapers = true
+    var loadingMoreManager: LoadingMoreManger!
     
     private var itemSize: CGFloat {
         let screenWidth = UIScreen.mainScreen().bounds.width
@@ -33,6 +36,7 @@ class PhotoListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        setupLoadingMoreManager()
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -48,6 +52,11 @@ class PhotoListViewController: UIViewController {
     private func setupUI() {
         title = Strings.PhotoList
         setupCollectionView()
+    }
+    
+    private func setupLoadingMoreManager() {
+        loadingMoreManager = LoadingMoreManger(scrollView: photosCollectionView)
+        loadingMoreManager.delegate = self
     }
     
     private func setupCollectionView() {
@@ -66,18 +75,27 @@ class PhotoListViewController: UIViewController {
         return layout
     }
     
-    private func loadWallPapers() {
+    private func loadWallPapers(completion: (() -> Void)? = nil) {
         MBProgressHUD.showHUDAddedTo(view, animated: true)
-        WallPaperService().loadWallPappers(kWallPaperCategory, page: 1) { (result) in
+        WallPaperService().loadWallPappers(kWallPaperCategory, page: currentLoadingPage) { (result) in
             MBProgressHUD.hideHUDForView(self.view, animated: true)
             switch result {
             case .Success(let wallPapers):
                 let loadedWallPapers: [WallPaper] = (wallPapers as? [WallPaper]) ?? []
+                self.shouldLoadingMoreWallPapers = loadedWallPapers.isEmpty
                 self.wallPapers.appendContentsOf(loadedWallPapers)
                 self.photosCollectionView.reloadData()
             case .Failure(let error):
                 print(error)
             }
+            completion?()
+        }
+    }
+    
+    private func loadMoreWallPappers(completion: () -> Void) {
+        currentLoadingPage = currentLoadingPage + 1
+        loadWallPapers { 
+            completion()
         }
     }
 }
@@ -105,5 +123,23 @@ extension PhotoListViewController: UICollectionViewDelegate {
         photoViewerViewController.wallPapers = self.wallPapers
         photoViewerViewController.selectedWallPaper = self.wallPapers[indexPath.row]
         navigationController?.pushViewController(photoViewerViewController, animated: true)
+    }
+    
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        loadingMoreManager.triggerLoadingMore()
+    }
+}
+
+//MARK:- LoadingMoreManagerDelegate
+
+extension PhotoListViewController: LoadingMoreMangerDelegate {
+    func loadingMoreManager(manager: LoadingMoreManger, willLoadmoreWithCompletionHandler completionHandler: () -> Void) {
+        loadMoreWallPappers { 
+            completionHandler()
+        }
+    }
+    
+    func loadingMoreManagerShouldTriggerLoadingMore(manager: LoadingMoreManger) -> Bool {
+        return shouldLoadingMoreWallPapers
     }
 }

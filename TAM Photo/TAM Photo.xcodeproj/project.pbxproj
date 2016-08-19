@@ -79,6 +79,8 @@
 		2DB671A71D664FC70052B1AE /* UIButton+AlamofireImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB6719D1D664FC70052B1AE /* UIButton+AlamofireImage.swift */; };
 		2DB671A81D664FC70052B1AE /* UIImage+AlamofireImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB6719E1D664FC70052B1AE /* UIImage+AlamofireImage.swift */; };
 		2DB671A91D664FC70052B1AE /* UIImageView+AlamofireImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB6719F1D664FC70052B1AE /* UIImageView+AlamofireImage.swift */; };
+		2DEC6A291D66A6150047926A /* LoadingMoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DEC6A281D66A6150047926A /* LoadingMoreManager.swift */; };
+		2DEC6A2B1D66A62B0047926A /* UIScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DEC6A2A1D66A62B0047926A /* UIScrollView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -181,6 +183,8 @@
 		2DB6719D1D664FC70052B1AE /* UIButton+AlamofireImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+AlamofireImage.swift"; sourceTree = "<group>"; };
 		2DB6719E1D664FC70052B1AE /* UIImage+AlamofireImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+AlamofireImage.swift"; sourceTree = "<group>"; };
 		2DB6719F1D664FC70052B1AE /* UIImageView+AlamofireImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+AlamofireImage.swift"; sourceTree = "<group>"; };
+		2DEC6A281D66A6150047926A /* LoadingMoreManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingMoreManager.swift; sourceTree = "<group>"; };
+		2DEC6A2A1D66A62B0047926A /* UIScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIScrollView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -321,6 +325,7 @@
 				2DB671151D6610CF0052B1AE /* CGGeometry.swift */,
 				2DB6711E1D6614B80052B1AE /* UICollectionView.swift */,
 				2D7B0ADE1D665663000F833C /* Array.swift */,
+				2DEC6A2A1D66A62B0047926A /* UIScrollView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -364,6 +369,7 @@
 			isa = PBXGroup;
 			children = (
 				2DB671291D662A6F0052B1AE /* CenterCollectionViewFlowLayout.swift */,
+				2DEC6A281D66A6150047926A /* LoadingMoreManager.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -713,9 +719,11 @@
 				2DB671801D664A940052B1AE /* FromJSON.swift in Sources */,
 				2DB671851D664A940052B1AE /* ToJSON.swift in Sources */,
 				2DB671821D664A940052B1AE /* Mappable.swift in Sources */,
+				2DEC6A2B1D66A62B0047926A /* UIScrollView.swift in Sources */,
 				2DB6714C1D663FD90052B1AE /* Download.swift in Sources */,
 				2DB6718B1D664A940052B1AE /* EnumTransform.swift in Sources */,
 				2DB671531D663FD90052B1AE /* Notifications.swift in Sources */,
+				2DEC6A291D66A6150047926A /* LoadingMoreManager.swift in Sources */,
 				2DB6715A1D663FD90052B1AE /* Stream.swift in Sources */,
 				2DB6718A1D664A940052B1AE /* DictionaryTransform.swift in Sources */,
 				2DB671A81D664FC70052B1AE /* UIImage+AlamofireImage.swift in Sources */,

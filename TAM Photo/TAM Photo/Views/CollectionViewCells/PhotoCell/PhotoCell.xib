@@ -16,20 +16,26 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rfe-HH-Eg5">
                         <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                     </imageView>
+                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="KmE-Dd-C1M">
+                        <rect key="frame" x="40" y="40" width="20" height="20"/>
+                    </activityIndicatorView>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
             <constraints>
                 <constraint firstItem="rfe-HH-Eg5" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="0k7-5B-ah2"/>
+                <constraint firstItem="KmE-Dd-C1M" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="DkL-MM-kcR"/>
                 <constraint firstAttribute="bottom" secondItem="rfe-HH-Eg5" secondAttribute="bottom" id="Oum-VM-egX"/>
                 <constraint firstAttribute="trailing" secondItem="rfe-HH-Eg5" secondAttribute="trailing" id="g0I-zw-0Dc"/>
                 <constraint firstItem="rfe-HH-Eg5" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="pkI-Df-5nB"/>
+                <constraint firstItem="KmE-Dd-C1M" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="v1k-da-gdn"/>
             </constraints>
             <size key="customSize" width="132" height="106"/>
             <connections>
+                <outlet property="acitivityIndicatorView" destination="KmE-Dd-C1M" id="n7z-6i-UXV"/>
                 <outlet property="photoImageView" destination="rfe-HH-Eg5" id="aOx-62-zWI"/>
             </connections>
-            <point key="canvasLocation" x="149" y="155"/>
+            <point key="canvasLocation" x="-41" y="5"/>
         </collectionViewCell>
     </objects>
 </document>
