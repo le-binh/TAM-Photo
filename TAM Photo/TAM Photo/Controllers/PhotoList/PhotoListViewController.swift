@@ -126,7 +126,11 @@ extension PhotoListViewController: UICollectionViewDelegate {
         navigationController?.pushViewController(photoViewerViewController, animated: true)
     }
     
-    func scrollViewDidScroll(scrollView: UIScrollView) {
+    func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        loadingMoreManager.triggerLoadingMore()
+    }
+    
+    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
         loadingMoreManager.triggerLoadingMore()
     }
 }
