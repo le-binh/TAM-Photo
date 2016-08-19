@@ -69,6 +69,7 @@ class PhotoViewerCell: UICollectionViewCell {
                 self.photoImageView.image = image
                 self.layoutIfNeeded()
                 self.layoutSubviews()
+                self.centerPhotoImageViewInSize(self.bounds.size)
             }
         }
     }
