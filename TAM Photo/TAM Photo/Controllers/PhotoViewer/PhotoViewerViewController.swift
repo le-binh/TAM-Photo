@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PhotoViewerViewController: UIViewController {
+class PhotoViewerViewController: BaseViewController {
     
     //MARK:- Properties
     
@@ -30,13 +30,23 @@ class PhotoViewerViewController: UIViewController {
         setupUI()
     }
     
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBarHidden = true
+        UIApplication.sharedApplication().statusBarHidden = true
     }
+    
+    //MARK:- IBAction
+    
+    @IBAction func closeButtonClicked(sender: AnyObject) {
+        navigationController?.popViewControllerAnimated(true)
+    }
+    
     
     //MARK:- Private functions
     
     private func setupUI() {
+        automaticallyAdjustsScrollViewInsets = false
         setupCollectionView()
     }
     
@@ -51,6 +61,7 @@ class PhotoViewerViewController: UIViewController {
         photoViewerCollectionView.decelerationRate = UIScrollViewDecelerationRateFast
         photoViewerCollectionView.registerNib(PhotoViewerCell)
         photoViewerCollectionView.collectionViewLayout = layoutForCollectionView()
+        photoViewerCollectionView.backgroundColor = Colors.Blue91
     }
     
     private func layoutForCollectionView() -> UICollectionViewLayout {

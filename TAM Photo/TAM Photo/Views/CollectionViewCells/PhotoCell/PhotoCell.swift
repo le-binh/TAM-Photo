@@ -15,6 +15,11 @@ class PhotoCell: UICollectionViewCell {
     @IBOutlet private weak var photoImageView: UIImageView!
     @IBOutlet private weak var acitivityIndicatorView: UIActivityIndicatorView!
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        contentView.backgroundColor = Colors.White
+    }
+    
     func configureCell(wallPaper: WallPaper) {
         acitivityIndicatorView.startAnimating()
         photoImageView.image = nil
